@@ -24,8 +24,13 @@ if(process.env.NODE_ENV === 'local') {
 // Get the directory name from the current module's URL
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Serve static files from the 'frontend/dist' directory
-app.use(express.static(path.join(__dirname, "./frontend/dist")));
+if(process.env.NODE_ENV === 'production') {
+    // Serve static files from the 'frontend/dist' directory
+    app.use(express.static(path.join(__dirname, "./frontend/dist")));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, "./", "frontend", "dist", "index.html"))
+    })
+}
 
 const dbConnect = async () => {
     try {
