@@ -7,6 +7,8 @@ import Layout from './pages/Layout.jsx'
 import Home from './components/Home.jsx'
 import Templates from './components/Templates.jsx'
 import Projects from './components/Projects.jsx'
+import CreateDesign from './components/CreateDesign.jsx'
+import Main from './pages/Main.jsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -26,6 +28,14 @@ const appRouter = createBrowserRouter([
         element: <Projects />
       },
     ]
+  },
+  {
+    path: '/design/create',
+    element: <CreateDesign />
+  },
+  {
+    path: '/design/:id/edit',
+    element: <Main />
   }
 ])
 
