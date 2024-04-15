@@ -5,6 +5,7 @@ import './index.css'
 // import App from './App.jsx'
 import Layout from './pages/Layout.jsx'
 import Home from './components/Home.jsx'
+import LandingPage from './pages/Home.jsx'
 import Templates from './components/Templates.jsx'
 import Projects from './components/Projects.jsx'
 import CreateDesign from './components/CreateDesign.jsx'
@@ -36,6 +37,10 @@ const appRouter = createBrowserRouter([
   {
     path: '/design/:id/edit',
     element: <Main />
+  },
+  {
+    path: '/landingpage',
+    element: <LandingPage />
   }
 ])
 
