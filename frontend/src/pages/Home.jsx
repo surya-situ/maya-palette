@@ -3,6 +3,8 @@ import { IoCloseSharp } from "react-icons/io5";
 import { FaFacebookF } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 
+import Logo from '../assets/logo.jpg'
+
 const Home = () => {
 
     const [ type, setType ] = useState('')
@@ -165,11 +167,15 @@ const Home = () => {
             </div>
         </div>
 
-        <div className="bg-[#252627] shadow-md">
+        <div className="bg-gradient-to-r from-[#000000] via-[#0d0d0d] to-[#242425] shadow-md">
             <div className="w-[93%] m-auto py-3">
                 <div className="flex items-center justify-between">
-                    <div className="w-[120px] h-[48px] text-white">
-                        <img className="w-full h-full" src="https://static.canva.com/web/images/12487a1e0770d29351bd4ce4f87ec8fe.svg" alt="logo"/>
+                    <div className="">
+                        <img 
+                            className="w-48" 
+                            src={Logo}
+                            alt="logo"
+                        />
                     </div>
                     <div className="flex gap-4">
                         <button onClick={()=> { setType('login'); setShow(true)}} className="py-2 w-[80px] text-center bg-blue-500 text-white transition-all hover:bg-blue-600 rounded-[5px] font-medium">Log in</button>
@@ -182,7 +188,7 @@ const Home = () => {
         <div className="flex items-center justify-center w-full h-full text-center">
             <div className="py-[168px] flex justify-center items-center flex-col gap-6">
                 <h2 className="text-5xl text-[#c7c5c5] font-bold">What will you design today ?</h2>
-                <span className="text-[#aca9a9] text-2xl font-medium">Canva makes it eay to create and share professional design.</span>
+                <span className="text-[#aca9a9] text-2xl font-medium">Maya-palette makes it eay to create and share professional design.</span>
                 <button onClick={()=> { setType('signup'); setShow(true)}} className="py-2 w-[200px] text-center bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-[5px] font-medium">Sing up for free</button>
             </div>
           </div>
