@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
+import Logo from "../assets/logo.jpg";
+
 import { IoHome } from "react-icons/io5";
 import { HiTemplate } from "react-icons/hi";
 import { FaProjectDiagram } from "react-icons/fa";
@@ -12,13 +14,13 @@ const Layout = () => {
     
   return (
     <div className="bg-[#18191b] min-h-screen w-full">
-        <div className="bg-[#252627] shadow-md fixed left-0 top-0 w-full z-0">
+        <div className="bg-gradient-to-r from-[#000000] via-[#0d0d0d] to-[#242425] shadow-md fixed left-0 top-0 w-full z-0">
             <div className="w-[93%] m-auto py-3">
                 <div className="flex items-center justify-between">
-                    <div className="w-[80px] h-[48px]">
+                    <div className="">
                         <img 
-                            className="w-full h-full" 
-                            src="https://static.canva.com/web/images/12487a1e0770d29351bd4ce4f87ec8fe.svg" 
+                            className="w-48" 
+                            src={Logo}
                             alt="logo"
                         />
                     </div>
