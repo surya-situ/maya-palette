@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import Logo from "../assets/logo.jpg"
 
 
 const Header = () => {
@@ -8,10 +9,10 @@ const Header = () => {
     const downloadImage = () => {};
 
     return (
-        <div className="h-[60px] bg-gradient-to-t from-[#212122] via-[#27282b] to-[#2a2b2c] w-full">
-            <div className="flex items-center justify-between h-full px-10 text-gray-300">
+        <div className="h-[60px] bg-gradient-to-r from-[#000000] via-[#101010] to-[#242425] w-full">
+            <div className="flex items-center justify-between h-full px-8 text-gray-300">
                 <Link to='/'>
-                    <img src="https://rb.gy/qddwnz" />
+                    <img className="w-40" src={Logo} alt="Header logo"/>
                 </Link>
 
                 <div className="flex items-center justify-center gap-2 text-gray-300 ">
