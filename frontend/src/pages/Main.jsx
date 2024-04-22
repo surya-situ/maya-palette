@@ -15,23 +15,58 @@ import TemplateDesign from "../components/TemplateDesign";
 import MyImages from "../components/MyImages";
 import Projects from "../components/Projects";
 import Image from "../components/Image";
+import CreateComponent from "../components/CreateComponent";
 
 const Main = () => {
 
     const [state, setState] = useState('');
 
+    const [ currentComponent, setCurrentComponent ] = useState('');
+
     const [show, setShow ] = useState({
         status: true,
         name: ''
-    })
+    });
 
     const setElement = (type, name) => {
         setState(type)
         setShow({
             show: false,
             name: 'design'
-        });
+        })
     };
+
+    const moveElement = () => {
+        console.log("move");
+    };
+
+    const resizeElement = () => {
+        console.log("resize");
+    };
+
+    const rotateElement = () => {
+        console.log("rotate");
+    };
+
+    const [ components, setComponents ] = useState([
+        {
+            name: 'main_frame',
+            type: 'rectangle',
+            id: Math.floor((Math.random() * 100 ) +  1),
+            height: 450,
+            width: 650,
+            z_index: 1,
+            color: '#fff',
+            image: '',
+            setCurrentComponent: (e) => setCurrentComponent(e)
+        }
+    ]);
+
+    const removeComponent = () => {
+        console.log("remove component");
+    }
+
+    console.log(currentComponent);
 
 
   return (
@@ -182,6 +217,24 @@ const Main = () => {
                         </div>
                     }
                 </div>
+
+                <div className="flex w-full h-full">
+                    <div className={`flex justify-center relative items-center h-full ${!currentComponent ? 'w-full' : 'w-[calc(100%-250px)]'} overflow-hidden`}>
+                        <div className="min-w-[650px] min-h-[450px] flex justify-center items-center overflow-hidden">
+                            <div id="min_design" className="w-auto relative h-auto overflow-hidden">
+                                {
+                                    components.map((c, i) => <CreateComponent key={i} info={c} current_component={currentComponent} remove_component={removeComponent}/>)
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    {
+                        currentComponent && <div className="h-full w-[250px] text-gray-300 bg-[#252627] px-3 py-2">Surya</div>
+                    }
+
+                </div>
+
             </div>
         </div>
     </div>
